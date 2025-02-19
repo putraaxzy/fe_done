@@ -69,7 +69,9 @@ export default function DetailPage() {
             <p className="text-lg md:text-xl leading-relaxed whitespace-pre-line text-white/80"
                dangerouslySetInnerHTML={{ __html: sanitizeDescription(item.description) }} />
             <div className="mt-8 text-sm text-white/60">
-              <p>Diperbarui: {new Date(item.updatedAt || '').toLocaleDateString('id-ID')}</p>
+              {item.updatedAt && (
+                <p>Diperbarui: {new Date(item.updatedAt).toLocaleDateString('id-ID')}</p>
+              )}
             </div>
           </div>
         </div>
